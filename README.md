@@ -35,17 +35,23 @@ Returns a programming joke based on the humor level and language.
 
 #### Query Parameters
 
-1. Query Parameter: level
-low - For a joke with a low humor level.
-medium - For a joke with a medium humor level.
-high - For a joke with a high humor level.
-
-2. Header: Accept-Language
-en-us - For jokes in English (U.S.).
-pt-br - For jokes in Portuguese (Brazil).
+##### Level
+1. low - For a joke with a low humor level.
+2. medium - For a joke with a medium humor level.
+3. high - For a joke with a high humor level.
 
 
-#### Example
+##### Header: Accept-Language
+1. en-us - For jokes in English (U.S.).
+2. pt-br - For jokes in Portuguese (Brazil).
+
+
+#### cURL to Test
 
 ```bash
-curl -H "Accept-Language: pt-br" "http://localhost:5000/joke?level=high"
+curl --location 'http://localhost:5000/joke?level=low' \
+--header 'Accept-Language: en-us'
+```
+
+
+![image](https://github.com/user-attachments/assets/3d95d22e-f20d-4978-9dfa-45f666f196a6)
