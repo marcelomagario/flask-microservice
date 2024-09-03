@@ -21,7 +21,7 @@ def get_joke(level, language):
 @app.route('/joke', methods=['GET'])
 def joke():
     level = request.args.get('level', 'medium')
-    language = request.headers.get('Accept-Language', 'en')
+    language = request.headers.get('Accept-Language', 'en-us')
 
     joke_text = get_joke(level, language)
     if joke_text is None:

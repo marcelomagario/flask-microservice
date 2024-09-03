@@ -2,12 +2,11 @@
 
 This is a Flask microservice that provides programming jokes with filtering by humor level and language selection.
 
-## Requirements
+## Running the Application
 
-- Docker
-- Docker Compose
+To run the application, you need to build and start the Docker container. Follow these steps:
 
-## Setup
+### Setup
 
 1. Clone the repository:
 
@@ -15,6 +14,7 @@ This is a Flask microservice that provides programming jokes with filtering by h
     git clone <REPOSITORY_URL>
     cd flask-microservice
     ```
+
 
 2. Build the Docker image and start the container:
 
@@ -24,7 +24,10 @@ This is a Flask microservice that provides programming jokes with filtering by h
 
 3. The application will be available at `http://localhost:5000`.
 
-## Endpoints
+
+
+
+## API Endpoint
 
 ### `GET /joke`
 
@@ -32,11 +35,15 @@ Returns a programming joke based on the humor level and language.
 
 #### Query Parameters
 
-- `level`: Humor level of the joke (`low`, `medium`, `high`). Default is `medium`.
+1. Query Parameter: level
+low - For a joke with a low humor level.
+medium - For a joke with a medium humor level.
+high - For a joke with a high humor level.
 
-#### Headers
+2. Header: Accept-Language
+en-us - For jokes in English (U.S.).
+pt-br - For jokes in Portuguese (Brazil).
 
-- `Accept-Language`: Language of the joke (`en` for English, `pt-br` for Brazilian Portuguese). Default is `en`.
 
 #### Example
 
