@@ -2,6 +2,13 @@
 
 This is a Flask microservice that provides programming jokes with filtering by humor level and language selection.
 
+This version already has a Postgres Database and once you build the docker, already will created the table as the insert values automatically into it. 
+
+## STACK
+
+Python, Flask, Postgres, Docker, Docker-compose
+
+
 ## Running the Application
 
 To run the application, you need to build and start the Docker container. Follow these steps:
@@ -21,9 +28,6 @@ To run the application, you need to build and start the Docker container. Follow
     ```bash
     docker-compose up --build
     ```
-
-3. The application will be available at `http://localhost:5000`.
-
 
 
 
@@ -50,7 +54,7 @@ Returns a programming joke based on the humor level and language.
 
 ```bash
 curl --location 'http://localhost:5000/joke?level=low' \
---header 'Accept-Language: en-us'
+--header 'Accept-Language: pt-br'
 ```
 
 
