@@ -1,56 +1,60 @@
-# Flask Microservice
+# 🤖 Flask Microservice – Programming Jokes API
 
-This is a Flask microservice that provides programming jokes with filtering by humor level and language selection.
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Flask](https://img.shields.io/badge/Framework-Flask-lightgrey)
+![Docker](https://img.shields.io/badge/Deployed-Docker-green)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue)
 
-This version already has a Postgres Database and once you build the docker, already will created the table as the insert values automatically into it. 
+A Flask-based microservice that returns programming jokes based on humor level and selected language.  
+This version includes a PostgreSQL database that is automatically populated when the container starts.
 
-## STACK
+---
 
-Python, Flask, Postgres, Docker, Docker-compose
+## 🚀 Tech Stack
 
+- Python + Flask
+- PostgreSQL
+- Docker & Docker Compose
 
-## Running the Application
+---
 
-To run the application, you need to build and start the Docker container. Follow these steps:
+## 🧩 Features
+
+- ✅ Filter jokes by humor level (`low`, `medium`, `high`)
+- ✅ Language selection via `Accept-Language` header (`en-us` / `pt-br`)
+- ✅ Fully containerized with Docker
+- ✅ Automatic table creation and joke insertion on container start
+
+---
+
+## ⚙️ How to Run Locally
+
+### Prerequisites
+
+- Docker
+- Docker Compose
 
 ### Setup
 
-1. Clone the repository:
+```bash
+git clone <REPOSITORY_URL>
+cd flask-microservice
+docker-compose up --build
+```
 
-    ```bash
-    git clone <REPOSITORY_URL>
-    cd flask-microservice
-    ```
+The API will run on http://localhost:5000
 
+📡 API Endpoint
+GET /joke
+Returns a programming joke based on the query and headers.
 
-2. Build the Docker image and start the container:
+Query Parameters
+level=low | medium | high
 
-    ```bash
-    docker-compose up --build
-    ```
+Headers
+Accept-Language: en-us for English
 
-
-
-## API Endpoint
-
-### `GET /joke`
-
-Returns a programming joke based on the humor level and language.
-
-#### Query Parameters
-
-##### Level
-1. low - For a joke with a low humor level.
-2. medium - For a joke with a medium humor level.
-3. high - For a joke with a high humor level.
-
-
-##### Header: Accept-Language
-1. en-us - For jokes in English (U.S.).
-2. pt-br - For jokes in Portuguese (Brazil).
-
-
-#### cURL to Test
+Accept-Language: pt-br for Portuguese
 
 ```bash
 curl --location 'http://localhost:5000/joke?level=low' \
